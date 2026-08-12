@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Random Number</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #fff7ed,
+                #fef3c7
+            );
+        }
+
+
+        .container {
+
+            width: 500px;
+            max-width: 90%;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        h1 {
+
+            color: #92400e;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .description {
+
+            color: #64748b;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* กล่องแสดงเลข */
+
+        .number-box {
+
+            width: 180px;
+            height: 180px;
+
+            margin: 30px auto;
+
+            border-radius: 30px;
+
+            background: #f59e0b;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 90px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 10px 20px
+                rgba(245,158,11,0.35);
+
+        }
+
+
+        /* ปุ่ม น้อมรับคำทำนาย */
+
+        .random-button {
+
+            border: none;
+
+            background: #f59e0b;
+
+            color: white;
+
+            padding: 15px 35px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .random-button:hover {
+
+            background: #d97706;
+
+            transform: scale(1.05);
+
+        }
+
+
+        /* ปุ่มกลับ */
+
+        .back-button {
+
+            margin-top: 20px;
+
+            border: none;
+
+            background: #64748b;
+
+            color: white;
+
+            padding: 10px 25px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+        }
+
+
+        .back-button:hover {
+
+            background: #475569;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <h1>🎲 Random Number</h1>
+
+    <p class="description">
+        กดปุ่มเพื่อสุ่มตัวเลขตั้งแต่ 1 ถึง 100
+    </p>
+
+
+    <!-- แสดงเลขที่สุ่ม -->
+
+    <div
+        id="randomNumber"
+        class="number-box">
+
+        ?
+
+    </div>
+
+
+    <!-- ปุ่มสุ่ม -->
+
+    <button
+        class="random-button"
+        onclick="randomNumber()">
+
+        🎲 เลขเด็ดวันนี้
+
+    </button>
+
+
+    <br>
+
+
+    <!-- กลับหน้าหลัก -->
+
+    <button
+        class="back-button"
+        onclick="goHome()">
+
+        ← กลับหน้าหลัก
+
+    </button>
+
+</div>
+
+
+<script>
+
+
+    // ฟังก์ชันสุ่มเลข 1 - 100
+
+    function randomNumber() {
+
+        const number =
+            Math.floor(Math.random() * 99) + 1;
+
+
+        document.getElementById(
+            "randomNumber"
+        ).textContent = number;
+
+    }
+
+
+    // กลับหน้าหลัก
+
+    function goHome() {
+
+        window.location.href =
+            "index.html";
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
